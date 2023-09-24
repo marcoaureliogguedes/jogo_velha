@@ -15,7 +15,7 @@ def limpa_tela():
 	else:
 		_ = system('clear')
 
-# Função 
+# Função para criar o conteúdo do game
 def game():
 
 	limpa_tela()
@@ -23,7 +23,7 @@ def game():
 	print("Adivinhe a palavra abaixo:\n")
 
 	# Lista de palavras para o jogo
-	palavras = ["audi", "ferrari", "porsche", "mercedes benz", "bmw" ]
+	palavras = ["audi", "ferrari", "porsche", "mercedes-benz", "bmw" ]
 
 	# Escolhe randomicamente uma palavra
 	palavra = random.choice(palavras)
@@ -59,3 +59,19 @@ def game():
 		else:
 			chances -= 1
 			letras_erradas.append(tentativa)
+
+		# Condicional
+		if "_" not in letras_descobertas:
+			print("\nVocê venceu, a palavra era:", palavra)
+			break
+
+	# Condicional
+	if "_" in letras_descobertas:
+		print("\nVoce perder, a palavra era:", palavra)
+
+# Bloco main
+if __name__ == "__main__":
+	game()
+	print("\nParabéns. Você está aprendendo programção em Python! :)\n")
+
+
